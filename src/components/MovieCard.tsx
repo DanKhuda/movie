@@ -9,12 +9,12 @@ interface MovieCardProps {
 
 const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   return (
-    <Link href={`/movie/${movie.imdbID}`} className="text-dark text-decoration-none">
+    <Link href={`/${movie.imdbID}`} className="text-dark text-decoration-none">
       <Col>
         <Card>
           <figure>
             <Image
-              src={movie.Poster !== "N/A" ? movie.Poster : "/images/default-image.jpg"}
+              src={movie.Poster !== "N/A" ? movie.Poster : "/movie/images/default-image.jpg"}
               alt={movie.Title}
               width={245}
               height={200}

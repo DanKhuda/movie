@@ -1,11 +1,10 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import { ParsedUrlQuery } from "querystring";
 import { Container, Row, Col } from "react-bootstrap";
-import Image from "next/image";
-import { MovieDetails } from "../../types/MovieSearchResult";
+import Image from "next/legacy/image";
+import { MovieDetails } from "../types/MovieSearchResult";
 import NavigationBar from "@/components/NavigationBar";
-import { API_URL, API_KEY } from "../api/config";
-import MovieDetailsItem from "../../components/MovieDetailsItem";
+import { API_URL, API_KEY } from "./api/config";
+import MovieDetailsItem from "../components/MovieDetailsItem";
 
 type MovieProps = {
   movie: MovieDetails;
@@ -19,7 +18,7 @@ const Movie = ({ movie }: MovieProps) => {
         <Row>
           <Col md={4}>
             <Image
-              src={movie.Poster}
+              src={movie.Poster !== "N/A" ? movie.Poster : "/movie/images/default-image.jpg"}
               alt={movie.Title}
               width={300}
               height={450}
