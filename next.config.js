@@ -5,12 +5,4 @@ module.exports = {
     unoptimized: true,
   },
   basePath: "/movie",
-  async rewrites() {
-    return [
-      {
-        source: "/movie/:id*",
-        destination: "/movie/[id]",
-      },
-    ];
-  },
 };
