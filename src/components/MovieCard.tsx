@@ -1,6 +1,6 @@
 import { Col, Card } from "react-bootstrap";
 import { Movie } from "../types/MovieSearchResult";
-import Link from "next/link";
+import NextLink from "next/link";
 import Image from "next/legacy/image";
 
 interface MovieCardProps {
@@ -9,7 +9,7 @@ interface MovieCardProps {
 
 const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   return (
-    <Link href={`/${movie.imdbID}`} className="text-dark text-decoration-none">
+    <NextLink href={`/${movie.imdbID}`} className="text-dark text-decoration-none">
       <Col>
         <Card>
           <figure>
@@ -30,7 +30,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
           </Card.Body>
         </Card>
       </Col>
-    </Link>
+    </NextLink>
   );
 };
 
